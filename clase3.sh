@@ -14,6 +14,7 @@ if [ "$#" -eq 1 ]; then
 	case $clase1 in
 
 		1)
+
 			if [ -f "$1" ];
 			then
 				read -p 'Introduce la línea que deseas leer: ' linea;
@@ -29,29 +30,34 @@ if [ "$#" -eq 1 ]; then
 				echo "El fichero no existe.";
 	   		fi
 			;;
+
 		2)
+
 			if [ -f "$1" ];
-                	then
-				tail -n 1;
-                	else
+            then
+				tail -n 1 $1;
+            else
 				echo "El archivo no existe.";
-	  		fi
+			fi
 			;;
+
 		3)
 
 			if [ -f "$1" ];
 			then
-				head -n 1;
+				head -n 1 $1;
 			else
 				echo "El archivo no existe.";
 			fi
 			;;
+
 		4)
 
 			if [ -f "$1" ];
 			then
-				read "Introduce las dos líneas limitadoras (Primera Segunda): " linea1 linea2;
-				head -n $linea1;
+				read -p "Introduce las dos líneas limitadoras (Primera Segunda): " linea1 linea2;
+				resta=$(($linea2 - $linea1));
+				head -n $linea2 $1 | tail -n $resta;
 			else
 				echo "Algo ha salido mal";
 			fi
@@ -60,7 +66,7 @@ if [ "$#" -eq 1 ]; then
 
 else
 
-	echo "Hay más de un argumento."
+	echo "No ha introducido un número de argumentos válido."
 	exit
 
 fi
