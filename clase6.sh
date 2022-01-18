@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [[ $1 = /* && -f "$1" ]]; then
+noar=
+
+if [[ "$1" = /* ]] && [[ -d "$1" ]]; then
 
     echo "Introduce qué quieres hacer con el directorio:
 
@@ -17,7 +19,7 @@ if [[ $1 = /* && -f "$1" ]]; then
 
     case $tarea in
 
-        a) 
+        a)
 
             tar -czvf $archivo.tar.gz $1;
             ;;
@@ -37,10 +39,10 @@ if [[ $1 = /* && -f "$1" ]]; then
 
             read -p "Escriba la ruta absoluta en la que quiere descomprimir el archivo: " desc;
 
-            if [[ "$1" = /* && -f "$1" ]]; then
+            if [[ "$1" = /* && -d "$1" ]]; then
 
-                tar -xzvf $archivo -C $desc;
-            
+x                tar -xzvf $archivo -C $desc;
+
             else
 
                 echo "La ruta introducida no es válida."
