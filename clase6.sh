@@ -1,61 +1,63 @@
 #!/bin/bash
 
-noar=
+if [[ "$1" = /* ]]; then
 
-if [[ "$1" = /* ]] && [[ [[ -d "$1" ]] || [[ -f "$1" ]] ]]; then
+    if [[ [[ -d "$1" ]] || [[ -f "$1" ]] ]]; then
 
-    echo "Introduce qué quieres hacer con el directorio:
+        echo "Introduce qué quieres hacer con el directorio:
 
-	a. Comprimir
-        b. Comprimir y copiar
-        c. Descomprimir
-        d. Descomprimir en carpeta
-        e. Salir
-	"
+        a. Comprimir
+            b. Comprimir y copiar
+            c. Descomprimir
+            d. Descomprimir en carpeta
+            e. Salir
+        "
 
-    read tarea
+        read tarea
 
-    archivo=$(echo $1 | rev | cut -f1 -d'/' | rev);
+        archivo=$(echo $1 | rev | cut -f1 -d'/' | rev);
 
-    case $tarea in
+        case $tarea in
 
-        a)
+            a)
 
-            tar -czvf $archivo.tar.gz $1;
-            ;;
+                tar -czvf $archivo.tar.gz $1;
+                ;;
 
-        b)
+            b)
 
-            tar -czvf $archivo.tar.gz $1;
-            mv ./$archivo.tar.gz ./Seguridad/;
-            ;;
+                tar -czvf $archivo.tar.gz $1;
+                mv ./$archivo.tar.gz ./Seguridad/;
+                ;;
 
-        c)
+            c)
 
-            tar -xzvf $archivo;
-            ;;
+                tar -xzvf $archivo;
+                ;;
 
-        d)
+            d)
 
-            read -p "Escriba la ruta absoluta en la que quiere descomprimir el archivo: " desc;
+                read -p "Escriba la ruta absoluta en la que quiere descomprimir el archivo: " desc;
 
-            if [[ "$1" = /* && -d "$1" ]]; then
+                if [[ "$1" = /* && -d "$1" ]]; then
 
-                tar -xzvf $archivo -C $desc;
+                    tar -xzvf $archivo -C $desc;
 
-            else
+                else
 
-                echo "La ruta introducida no es válida."
+                    echo "La ruta introducida no es válida."
 
-            fi
-            ;;
+                fi
+                ;;
 
-        e) 
+            e) 
 
-            exit
-            ;;
+                exit
+                ;;
 
-    esac
+        esac
+    
+    fi;
 
 else
     echo "El directorio no existe o no has introducido la ruta absoluta."
