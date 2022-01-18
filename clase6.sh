@@ -2,7 +2,7 @@
 
 if [[ "$1" = /* ]]; then
 
-    if [[ [[ -d "$1" ]] || [[ -f "$1" ]] ]]; then
+    if [[ -d "$1" ]] || [[ -f "$1" ]]; then
 
         echo "Introduce qué quieres hacer con el directorio:
 
@@ -32,16 +32,16 @@ if [[ "$1" = /* ]]; then
 
             c)
 
-                tar -xzvf $archivo;
+                tar -xzvf $1;
                 ;;
 
             d)
 
                 read -p "Escriba la ruta absoluta en la que quiere descomprimir el archivo: " desc;
 
-                if [[ "$1" = /* && -d "$1" ]]; then
+                if [[ "$desc" = /* && -d "$desc" ]]; then
 
-                    tar -xzvf $archivo -C $desc;
+                    sudo tar -xzvf $1 -C $desc;
 
                 else
 
@@ -50,13 +50,13 @@ if [[ "$1" = /* ]]; then
                 fi
                 ;;
 
-            e) 
+            e)
 
                 exit
                 ;;
 
         esac
-    
+
     fi;
 
 else
