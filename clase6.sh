@@ -2,7 +2,7 @@
 
 noar=
 
-if [[ "$1" = /* ]] && [[ -d "$1" ]]; then
+if [[ "$1" = /* ]] && [[ [[ -d "$1" ]] || [[ -f "$1" ]] ]]; then
 
     echo "Introduce qué quieres hacer con el directorio:
 
@@ -41,7 +41,7 @@ if [[ "$1" = /* ]] && [[ -d "$1" ]]; then
 
             if [[ "$1" = /* && -d "$1" ]]; then
 
-x                tar -xzvf $archivo -C $desc;
+                tar -xzvf $archivo -C $desc;
 
             else
 
