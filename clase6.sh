@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$1" = /* && -f "$1" ]]; then
+if [[ $1 = /* && -f "$1" ]]; then
 
     echo "Introduce qué quieres hacer con el directorio:
 
