@@ -56,6 +56,10 @@ if [[ "$1" = /* ]]; then
                 ;;
 
         esac
+    
+    else
+
+        echo "La ruta introducida no es válida."
 
     fi;
 
