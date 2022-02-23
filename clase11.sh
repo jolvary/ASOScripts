@@ -4,9 +4,4 @@ for i in num1 num2
 do
 reverso=$(echo $i | rev);
 echo $reverso
-  if [[ $i -eq ((rev $i)) ]]
-  then
-    echo "El numero es capicua"
-  else
-    echo "El numero no es capicua"
 done
