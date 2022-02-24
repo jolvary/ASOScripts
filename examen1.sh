@@ -13,6 +13,15 @@ case $opcion in
     read -p "Introduce el número del GID deseado : " gid
     glist=$(cut -f4 -d':')
     echo $glist
+    for i in $glist
+    do
+        if [ $i -eq $gid ]
+        then
+            echo "existe"
+        else
+            echo "no existe"
+        fi
+    done
     ;;
     2)
     read -p "Introduce el número del UID deseado : " uid
