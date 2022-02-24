@@ -2,7 +2,7 @@
 
 if [ $# -eq 2 ]
 then
-    if [[ $(id -nu $1) ]]
+    if [[ $(id -nu $1) ]] && [[ $(id -nu $2) ]]
     then
         echo "Existe"
     else
