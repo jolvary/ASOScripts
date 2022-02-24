@@ -33,7 +33,9 @@ if [ "$#" -eq 1 ]; then
 				echo "El archivo no existe.";
 	  		fi
 			;;
-		3) exit;;
+		3) 
+		exit
+		;;
 
 	esac
 
