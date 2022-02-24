@@ -16,7 +16,7 @@ case $opcion in
     ;;
     2)
     read -p "Introduce el número del UID deseado : " uid
-    if [[ ((3 % 2)) -eq 0 ]]
+    if [[ $((3 % 2)) -eq 0 ]]
     then
         echo "algo"
     else
@@ -24,6 +24,7 @@ case $opcion in
         posterior=($uid + 1)
         echo $(id -nu $anterior)
         echo $(id -nu $posterior)
+    fi
     ;;
     3)
     exit;
