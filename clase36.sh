@@ -4,7 +4,7 @@ cont=0
 
 while [ $cont -lt $# ]
 do
-    if [[ $(($* % 2)) -eq 0 ]]
+    if [[ $(($1 % 2)) -eq 0 ]]
     then
         echo "pene"
     else
