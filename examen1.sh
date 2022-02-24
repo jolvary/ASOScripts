@@ -11,7 +11,7 @@ Opción:
 case $opcion in
     1)
     read -p "Introduce el número del GID deseado : " gid
-    glist=$(cut -f4 -d':')
+    glist=$(cut -f4 -d':' /etc/passwd)
     echo $glist
     for i in $glist
     do
