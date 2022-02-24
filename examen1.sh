@@ -20,9 +20,9 @@ case $opcion in
     then
         echo "algo"
     else
-        anterior=($uid - 1)
+        anterior=$((uid - 1))
         echo $anterior
-        posterior=($uid + 1)
+        posterior=$((uid + 1))
         echo $posterior
         echo $(id -nu $anterior)
         echo $(id -nu $posterior)
