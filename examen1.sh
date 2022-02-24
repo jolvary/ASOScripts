@@ -18,8 +18,6 @@ case $opcion in
         if [ $i -eq $gid ]
         then
             echo "existe"
-        else
-            echo "no existe"
         fi
     done
     ;;
