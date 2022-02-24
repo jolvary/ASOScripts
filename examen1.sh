@@ -17,7 +17,7 @@ case $opcion in
     do
         if [ $i -eq $gid ]
         then
-            echo "existe"
+            echo $(grep :$gid: /etc/passwd | cut -f1 -d':')
         fi
     done
     ;;
