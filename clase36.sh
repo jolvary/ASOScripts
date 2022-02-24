@@ -2,7 +2,7 @@
 
 cont=0
 
-while ($cont -lt $#)
+while (cont -lt $#)
 do
 echo "pene"
 ((cont++))
