@@ -20,3 +20,5 @@ then
 else
     echo "Debe introducir dos parámetros"
 fi
+
+# EXAMEN REALIZADO POR ÁLVARO JIMÉNEZ ORTIZ 2ºASIR
