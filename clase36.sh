@@ -2,8 +2,12 @@
 
 cont=0
 
-while (cont -lt $#)
+while [ $cont -lt $# ]
 do
-echo "pene"
-((cont++))
+    if [[ $(($* % 2)) -eq 0 ]]
+    then
+        echo "pene"
+    else
+        echo "patata"
+    fi
 done
