@@ -6,7 +6,7 @@ then
     then
         echo "Existe"
     else
-        echo "No existe"
+        echo "No existe uno o ambos UIDs"
     fi
 else
     echo "Debe introducir dos parámetros"
