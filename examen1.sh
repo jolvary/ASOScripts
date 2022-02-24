@@ -24,7 +24,7 @@ case $opcion in
     done
     if [[ $((sum % 2)) -eq 0 ]]
     then
-        echo "algo"
+        echo "es par"
     else
         anterior=$((uid - 1))
         posterior=$((uid + 1))
