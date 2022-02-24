@@ -4,8 +4,7 @@ cont=0
 let "cont2=cont+1"
 while [ $cont -lt $# ]
 do
-    if [[ $(($cont2 % 2)) -eq 0 ]]
-    echo $cont2
+    if [[ $(($(($cont2)) % 2)) -eq 0 ]]
     then
         echo "pene"
         ((cont++))
