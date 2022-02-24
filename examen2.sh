@@ -7,6 +7,7 @@ then
         echo "Existe"
     else
         echo "No existe"
+    fi
 else
     echo "Debe introducir dos parámetros"
 fi
