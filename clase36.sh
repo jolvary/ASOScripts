@@ -1,6 +1,8 @@
 #!/bin/bash
 
-while $*
+cont=0
+
+while ($cont -lt $#)
 do
 echo "pene"
 done
