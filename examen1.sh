@@ -16,14 +16,18 @@ case $opcion in
     ;;
     2)
     read -p "Introduce el número del UID deseado : " uid
-    if [[ $((3 % 2)) -eq 0 ]]
+    len=${#uid}
+    sum=0
+    for (( i=0; i < $len; i++ ))
+    do
+	    sum=$((sum + ${uid:$i:1}))
+    done
+    if [[ $((sum % 2)) -eq 0 ]]
     then
         echo "algo"
     else
         anterior=$((uid - 1))
-        echo $anterior
         posterior=$((uid + 1))
-        echo $posterior
         echo $(id -nu $anterior)
         echo $(id -nu $posterior)
     fi
